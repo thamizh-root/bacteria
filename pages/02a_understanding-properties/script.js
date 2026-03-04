@@ -1,14 +1,16 @@
 import gsap from "gsap";
 
-gsap.to(".box", {
+const repeat = document.querySelector(".repeat");
+
+const animation = gsap.to(".box", {
   opacity: 1,
-  duration: 5,
+  rotation: 360,
+  backgroundColor: "#ff6f61",
   borderRadius: "50%",
-  rotate: 360,
-  // onComplete: () => {
-  //   gsap.to(".box", {
-  //     duration: 5,
-  //     borderRadius: "10%",
-  //   });
-  // },
+  scale: 1.25,
+  duration: 2,
+});
+
+repeat.addEventListener("click", () => {
+  animation.restart();
 });
